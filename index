@@ -1,0 +1,53 @@
+<?php
+class Fatura{
+private $numero;
+private $descricao;
+private $qtd;
+private $preco;
+
+public function getNumero(){
+    return $this->numero;
+}
+public function getDescricao(){
+    return $this->descricao;
+}
+public function getQtd(){
+    return $this->qtd;
+}
+public function getPreco(){
+    return $this->preco;
+}
+
+
+public function setNumero($numero){
+    return $this->numero = $numero;
+}
+public function setDescricao($descricao){
+    return $this->descricao = $descricao;
+}
+public function setQtd($qtd){
+    return $this->qtd = $qtd;
+}
+public function setPreco($preco){
+    return $this->preco = $preco;
+}
+
+
+public function getTotalFatura(){
+
+    if($this->preco<0.0){
+        $this->preco = 0;
+    }
+    
+    $total = $this->preco * $this->qtd;
+
+    if($total<0){
+        $total = 0;
+    }
+        return $total;
+ 
+}
+}
+
+
+?>
